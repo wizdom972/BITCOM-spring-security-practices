@@ -1,4 +1,4 @@
-package config.web;
+package config.app;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class SecurityConfigEx01 {
 
 	@Bean
-	public FilterChainProxy securityFilterChainProxy() {
+	public FilterChainProxy springSecurityFilterChain() {
 		List<SecurityFilterChain> securityFilterChains = Arrays.asList(new SecurityFilterChain() {
 
 			@Override
@@ -46,7 +46,7 @@ public class SecurityConfigEx01 {
 
 			@Override
 			public List<Filter> getFilters() {
-				return Arrays.asList(securityFilterEx01(), securityFilterEx02());
+				return Arrays.asList(securityFilterEx03(), securityFilterEx04());
 			}
 
 		});
