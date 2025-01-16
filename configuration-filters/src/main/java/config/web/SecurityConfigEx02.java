@@ -18,14 +18,18 @@ public class SecurityConfigEx02 {
             @Override
             public void customize(WebSecurity web) {
                 web
-                        .ignoring()
-                        .requestMatchers(new AntPathRequestMatcher("/assets/**"));
+                	.ignoring()
+                	.requestMatchers(new AntPathRequestMatcher("/assets/**"));
             }
         };
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.build();
+    	http
+			.formLogin((formLogin) -> {})
+			.httpBasic((httpBasic) -> {});
+    	
+    	return http.build();
     }
 }

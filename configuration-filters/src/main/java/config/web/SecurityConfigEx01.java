@@ -25,7 +25,27 @@ public class SecurityConfigEx01 {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.build();
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {        
+//        http.formLogin(new Customizer<FormLoginConfigurer<HttpSecurity>>() {
+//			
+//			@Override
+//			public void customize(FormLoginConfigurer<HttpSecurity> t) {
+//				
+//			}
+//		});
+    	
+    	// 위와 아래는 같은 코드
+    	http
+    		.formLogin((formLogin) -> {
+    			// 여기서 configure 세팅
+//    			formLogin
+//    				.loginPage("/user/login")
+//    				.usernameParameter("email")
+//    				.loginProcessingUrl("/auth");
+//    			
+    			// 뭐 이런 것들
+    		});
+    	
+    	return http.build();
     }
 }
