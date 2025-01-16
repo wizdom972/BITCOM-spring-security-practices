@@ -88,7 +88,7 @@ public class SecurityConfigEx04Test {
 	}
 	
 	@Test
-	@Order(4)
+	@Order(5)
 	public void testLogin() throws Throwable {
 		mvc.perform(get("/login"))
 			.andExpect(status().isOk())

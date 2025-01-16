@@ -9,4 +9,9 @@ public class MvcController {
     public String ping() {
         return "pong";
     }
+    
+    @GetMapping("/user/login")
+    public String login() {
+    	return "this is login form";
+    }
 }
