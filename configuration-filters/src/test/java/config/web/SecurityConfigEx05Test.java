@@ -26,6 +26,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import config.WebConfig;
+import config.app.SecurityConfigEx05;
 import jakarta.servlet.Filter;
 
 @ExtendWith(SpringExtension.class)
